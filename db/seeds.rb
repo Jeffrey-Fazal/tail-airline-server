@@ -18,20 +18,21 @@ puts "Created #{User.count} users"
 
 Reservation.destroy_all
 
-r1 = Reservation.create(user_id: '1',flight_id: '1',seat: '[A1]')
-r2 = Reservation.create(user_id: '1',flight_id: '1',seat: '[B3]')
-r3 = Reservation.create(user_id: '2',flight_id: '2',seat: '[D4]')
+r1 = Reservation.create(user_id: '1',flight_id: '1',seat: 'A1')
+r2 = Reservation.create(user_id: '1',flight_id: '1',seat: 'B3')
+r3 = Reservation.create(user_id: '2',flight_id: '2',seat: 'D4')
 
 puts "Created #{Reservation.count} reservations"
 
 Airplane.destroy_all
 
-a1 = Airplane.create(name: 'AAYk42',rows:'[A]',columns:'[1]')
-a2 = Airplane.create(name: '32E32E',rows:'[C]',columns:'[2]')
-a3 = Airplane.create(name: 'LIK021',rows:'[F]',columns:'[2]')
-a4 = Airplane.create(name: '291IEJ',rows:'[B]',columns:'[4]')
+a1 = Airplane.create(name: 'AAYk42',rows:'A',columns:'1')
+a2 = Airplane.create(name: '32E32E',rows:'C',columns:'2')
+a3 = Airplane.create(name: 'LIK021',rows:'F',columns:'2')
+a4 = Airplane.create(name: '291IEJ',rows:'B',columns:'4')
 
 puts "Created #{Airplane.count} airlines"
 
+puts "Airplanes and reservations will be created after associations and model updates"
 
 # TODO: create database association records
