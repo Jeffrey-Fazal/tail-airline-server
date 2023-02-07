@@ -1,7 +1,28 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Airplane.destroy_all
+
+a1 = Airplane.create(name: 'AAYk42',rows:'[A]',columns:'[1]')
+a2 = Airplane.create(name: '32E32E',rows:'[C]',columns:'[2]')
+a3 = Airplane.create(name: 'LIK021',rows:'[F]',columns:'[2]')
+a4 = Airplane.create(name: '291IEJ',rows:'[B]',columns:'[4]')
+
+Flight.destroy_all
+# f0 = Flight.create(flight_number: 'SYDAUHAM', origin: 'SYD', destination: 'AUD', date: '2023-05-08 20:53:01.000000000 +1100', airplane_id: 1)
+f1 = Flight.create(flight_number: 'SYDAUHAM', origin: 'SYD', destination: 'AUD', date: '2023-05-08 20:53:01.000000000 +1100', airplane_id: 1)
+f2 = Flight.create(flight_number: 'QLDWAAPM', origin: 'QLD', destination: 'WAH', date: '2023-05-09 20:53:01.000000000 +1100', airplane_id: 1)
+f3 = Flight.create(flight_number: 'ADLNTHAM', origin: 'ADL', destination: 'NTO', date: '2023-04-03 20:53:01.000000000 +1100', airplane_id: 2)
+
+
+User.destroy_all
+
+u1 = User.create(username: 'jeff', is_admin: true, email: 'jeff@ga.com')
+u2 = User.create(username: 'Hu', is_admin: true, email: 'hu@ga.com')
+u3 = User.create(username: 'jane', is_admin: false, email: 'jane@ga.com')
+u4 = User.create(username: 'jhon', is_admin: false, email: 'doe@ga.com')
+
+Reservation.destroy_all
+
+r1 = Reservation.create(user_id: '',flight_id: '',seat: '')
+r2 = Reservation.create(user_id: '',flight_id: '',seat: '')
+r3 = Reservation.create(user_id: '',flight_id: '',seat: '')
+
+# TODO: create database association records
