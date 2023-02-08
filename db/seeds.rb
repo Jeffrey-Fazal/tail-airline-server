@@ -4,7 +4,8 @@ Flight.destroy_all
 f1 = Flight.create(flight_number: 'SYDAUHAM', origin: 'SYD', destination: 'AUD', date: '2023-05-08 20:53:01.000000000 +1100', airplane_id: 1)
 f2 = Flight.create(flight_number: 'QLDWAAPM', origin: 'QLD', destination: 'WAH', date: '2023-05-09 20:53:01.000000000 +1100', airplane_id: 1)
 f3 = Flight.create(flight_number: 'ADLNTHAM', origin: 'ADL', destination: 'NTO', date: '2023-04-03 20:53:01.000000000 +1100', airplane_id: 2)
-
+# Ruby Timestamp format: 2019-02-07 23:44:00 UTC 
+# Note: AEST is 11 hours ahead of UTC
 puts "Created #{Flight.count} flights"
 
 User.destroy_all
@@ -26,13 +27,19 @@ puts "Created #{Reservation.count} reservations"
 
 Airplane.destroy_all
 
-a1 = Airplane.create(name: 'AAYk42',rows:'A',columns:'1')
-a2 = Airplane.create(name: '32E32E',rows:'C',columns:'2')
-a3 = Airplane.create(name: 'LIK021',rows:'F',columns:'2')
-a4 = Airplane.create(name: '291IEJ',rows:'B',columns:'4')
+a1 = Airplane.create(name: 'AAYk42',rows:'A,B,C,D,E,F',columns:'1,2,3,4,5')
+a2 = Airplane.create(name: '32E32E',rows:'A,B,C,D,E,F',columns:'1,2,3,4,5')
+a3 = Airplane.create(name: 'LIK021',rows:'A,B,C,D,E,F',columns:'1,2,3,4,5')
+a4 = Airplane.create(name: '291IEJ',rows:'A,B,C,D,E,F',columns:'1,2,3,4,5')
 
-puts "Created #{Airplane.count} airlines"
+puts "Created #{Airplane.count} airplanes"
 
-puts "Airplanes and reservations will be created after associations and model updates"
-
-# TODO: create database association records
+# Associations
+puts "airplanes and flights"
+a1.flights << f2
+# puts "users and reservations"
+# u1.reservations << r1
+# puts "flights and reservations"
+# f2.flights << r1
+# puts "reservations with users and flights"
+# r1.reservations << u1 << f2
