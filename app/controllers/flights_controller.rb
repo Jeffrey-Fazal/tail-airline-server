@@ -3,20 +3,17 @@ class FlightsController < ApplicationController
 
   # GET /flights or /flights.json
   def index
-    @flights = Flight.joins(:airplane)
-    respond_to do |format|
-      format.json { render :json => @flights.to_json(include: :airplane) }
-    end
+    @flights = Flight.all
+    # render json format of all flights with association with airplane.
+    # the association btw Airplane and Flight is has_many, that why :airplane is singular
+    render :json => @flights.to_json(:include => :airplane)
   end
 
   # GET /flights/1 or /flights/1.json
   def show
-    flights = Flight.joins(:airplane);
-    @flight = flights.find(params[:id])
-    respond_to do |format|
-      format.html { render 'show' }
-      format.json { render :json => @flight.to_json(include: :airplane) }
-    end
+    @flight = Flight.find(params[:id]);
+    render :json => @flight.to_json(:include => :airplane)
+
   end
 
   # GET /flights/new
