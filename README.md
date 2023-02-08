@@ -1,8 +1,27 @@
 # Burning Airline Server
 
-The Server is used to host the database and provide endpoints for the data. Endpoints are in json format
+The server is used to host the database and provide endpoints for the data. Endpoints are in json format.
 
-## Endpoints
+This server acts as the backend, make check the [react frontend docs](https://github.com/Jeffrey-Fazal/tail-airline-client) and launch react after this server is sucesfully setup.
+
+
+```
+git pull origin main
+bundle install
+rails s
+```
+
+# Usage
+
+``` 
+rails db:migrate
+rails db:seed
+rails s
+```
+
+# Endpoints
+
+Please run the server on port 3000 to ensure that the data flows corectly.
 
 * http://localhost:3000/reservations.json
 
@@ -11,8 +30,3 @@ The Server is used to host the database and provide endpoints for the data. Endp
 * http://localhost:3000/airplanes.json
 
 * http://localhost:3000/users.json
-
-
-## TODO:
-
-* Change authenticy token to allow communication with react
