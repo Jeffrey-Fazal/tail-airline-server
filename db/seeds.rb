@@ -1,11 +1,8 @@
 
 Flight.destroy_all
-# f0 = Flight.create(flight_number: 'SYDAUHAM', origin: 'SYD', destination: 'AUD', date: '2023-05-08 20:53:01.000000000 +1100', airplane_id: 1)
-f1 = Flight.create(flight_number: 'SYDAUHAM', origin: 'SYD', destination: 'AUD', date: '2023-05-08 20:53:01.000000000 +1100', airplane_id: 1)
-f2 = Flight.create(flight_number: 'QLDWAAPM', origin: 'QLD', destination: 'WAH', date: '2023-05-09 20:53:01.000000000 +1100', airplane_id: 1)
-f3 = Flight.create(flight_number: 'ADLNTHAM', origin: 'ADL', destination: 'NTO', date: '2023-04-03 20:53:01.000000000 +1100', airplane_id: 2)
-# Ruby Timestamp format: 2019-02-07 23:44:00 UTC 
-# Note: AEST is 11 hours ahead of UTC
+f1 = Flight.create(flight_number: 'SYDAUHAM', origin: 'SYD', destination: 'AUD', date: '2023-05-08', airplane_id: 1)
+f2 = Flight.create(flight_number: 'QLDWAAPM', origin: 'QLD', destination: 'WAH', date: '2023-05-09', airplane_id: 1)
+f3 = Flight.create(flight_number: 'ADLNTHAM', origin: 'ADL', destination: 'NTO', date: '2023-04-03', airplane_id: 2)
 puts "Created #{Flight.count} flights"
 
 User.destroy_all
@@ -35,8 +32,8 @@ a4 = Airplane.create(name: '291IEJ',rows:'A,B,C,D,E,F',columns:'1,2,3,4,5')
 puts "Created #{Airplane.count} airplanes"
 
 # Associations
-puts "airplanes and flights"
-a1.flights << f2
+# puts "airplanes and flights"
+# a1.flights << f2
 # puts "users and reservations"
 # u1.reservations << r1
 # puts "flights and reservations"
