@@ -30,13 +30,3 @@ a3 = Airplane.create(name: 'LIK021',rows:'A,B,C,D,E,F',columns:'1,2,3,4,5')
 a4 = Airplane.create(name: '291IEJ',rows:'A,B,C,D,E,F',columns:'1,2,3,4,5')
 
 puts "Created #{Airplane.count} airplanes"
-
-# Associations
-# puts "airplanes and flights"
-# a1.flights << f2
-# puts "users and reservations"
-# u1.reservations << r1
-# puts "flights and reservations"
-# f2.flights << r1
-# puts "reservations with users and flights"
-# r1.reservations << u1 << f2
